@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse bg-color">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref=".dashboard">Dashboard</a></li>
+        <li><a ui-sref=".buynow">Registration</a></li>
+        <li><a ui-sref=".postarequirementlist">Requirement</a></li>
+        <li><a ui-sref=".resourcelist"> Resource</a></li>
+        <li><a ui-sref=".alluserlist">All Users</a></li>
+       <!--  <li><a ui-sref=".JoinWithIn">JoinWithIn</a></li> -->
+        <li class="dropdown">
+		    <button class="btn btn-primary dropdown-toggle master_btn" type="button" data-toggle="dropdown" style="">Master
+		    <span class="caret"></span></button>
+		    <ul class="dropdown-menu master_dropdown">
+		      <li><a ui-sref=".jobcategory">JobCategory</a></li>
+		      <li><a ui-sref=".Jobtype">JobType</a></li>
+		      <li><a ui-sref=".JoinWithIn">JoinWithIn</a></li>
+		      <li><a ui-sref=".PrimarySkills">Primary Skills</a></li>
+		      <li><a ui-sref=".secondaryskill">Secondary Skill</a></li>
+		    </ul>
+	    </li>
+
+       <li><a ui-sref=".postresource">Post Resource</a></li>
+       <li><a ui-sref="">Resource Map</a></li>
+     </ul>
+      
+	  <ul class="nav navbar-nav navbar-right">
+	   <li class="m-t-20"> 
+			   <select class="form-control" ng-options="reg for reg in register" ng-model="registerData" ng-change="dataregister()">
+				<option value="" disabled="">Register</option>
+			  </select>
+	  </li>
+        <li ng-controller="LoginCtrl"><a href="#" ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div ui-view></div>

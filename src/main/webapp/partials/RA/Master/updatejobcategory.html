@@ -1,0 +1,16 @@
+<div class="container">
+		<div class="col-md-offset-3 col-md-6 frmbgclr">
+			<form ng-submit="putjob()" name="myForm">
+						<div class="form-group">
+							<label class="control-label" for="jobCategory">Update JobCategory:</label>
+							<input type="text" class="form-control" name="jobCategory" ng-model="putdata.jobCategory" required ng-pattern="/^[a-zA-Z](\D)+$/" ng-minlength="5" ng-maxlength="20" placeholder="Enter jobCategory" >	
+						    <span class="help-block" ng-show="myForm.jobCategory.$invalid && myForm.jobCategory.$touched ||myForm.jobCategory.$invalid && myForm.jobCategory.$dirty">
+                            <span class="help-block" ng-show="myForm.jobCategory.$error.required">jobCategory is required </span>
+                            </span>
+                            <span class="help-block" ng-show="myForm.jobCategory.$error.pattern || myForm.jobCategory.$error.minlength || myForm.jobCategory.$error.maxlength" >Enter Text only, between 5 to 20 characters</span>
+						</div>
+						<button type="submit" class="btn btn-primary" ui-sref="RA.jobcategory">Back</button>
+						 <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
+			</form>
+     </div>
+</div>

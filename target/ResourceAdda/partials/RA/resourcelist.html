@@ -1,0 +1,51 @@
+ <div  class="container m-t-50">
+                <form class="form-inline text-center">
+                    <div class="input-group">
+                    <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" required>
+                    <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                    </div>
+                </form>
+                <div class="table-responsive m-t-30">
+                	<table  class="table text-center">
+						    <thead>
+						        <th>S.No</th>
+						        <th>First Name</th>
+						        <th>Email</th>
+						        <th>Mobile</th>
+						        <th>Skills</th>
+						        <th>Experience</th>
+						        <th>Avaliability</th>
+								<th>Preferred Location</th>
+								<th>City</th>
+								<th>Status</th>
+								<th>Edit</th>
+								
+						    </thead>
+						    <tbody>
+						        <tr ng-repeat="resource in resourcelist | filter:search">
+						            <td>{{$index+1}}</td>
+						            <td>{{ resource.firstName}}</td>
+						            <td>{{ resource.emailId}}</td>
+						            <td>{{ resource.mobileNumber}}</td>
+						            <td>{{ resource.skills}}</td>
+						            <td>{{ resource.totalExperience }}</td>
+						            <td>{{ resource.availability }}</td>
+									<td>{{ resource.preferredLocation }}</td>
+						            <td>{{ resource.city }}</td>
+									<td><a type="button" class="btn btn-primary butn" ng-click="statusResource(resource)">{{resource.status}}</a></td>
+						           <td><a type="button" class="btn btn-primary butn" ui-sref="RA.updateresource({resourceId:resource._id})"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+						        </tr>
+						    </tbody>
+					</table>
+                </div> 
+                 <div class="row">
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary">Prev</button> 1/13 <button type="button" class="btn btn-primary">Next</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary pull-right" ui-sref="RA.addresource"> Add </button>
+                                  </div>
+                                  </div>
+                </div>

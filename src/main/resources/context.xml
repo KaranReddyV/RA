@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd    http://www.springframework.org/schema/task 
+    http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+	<!-- SPRING SETUP -->
+
+	<!-- Load properties so we can easily change them -->
+	<context:property-placeholder location="classpath:application.properties" />
+
+	<!-- Enable Annotation Configuration in order to automatically scan controllers -->
+	<context:annotation-config />
+
+	<!-- Search for Rest Resources and configure them automatically -->
+	<context:component-scan base-package="com.ojas.ra.*" />
+
+	<!-- Enable Annotation Configuration in order to automatically for task 
+		scheduling -->
+	<task:annotation-driven />
+
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value="cdata.jdbc.mongodb.MongoDBDriver" 
+		/> <property name="url" value="jdbc:mongodb:Server=127.0.0.1;Port=27017;Database=test" 
+		/> </bean> -->
+
+
+	<bean id="mongoConfig" class="com.ojas.ra.MongoConfig">
+		<property name="port" value="27017" />
+		<property name="host" value="localhost" />
+		<property name="database" value="spring_security_mongodb" />
+	</bean>
+
+	<bean id="mongoServiceFactory" class="com.ojas.ra.MongoServiceFactory"></bean>
+
+	<bean id="dataBaseInitializer" class="com.ojas.ra.service.impl.DataInitializer"
+		init-method="initDataBase">
+
+	</bean>
+
+	<bean id="mongoDAO" class="com.ojas.ra.dao.MongoDAO"></bean>
+
+	<bean id="taskSchedular" class="com.ojas.ra.util.TaskSchedular"></bean>
+
+	<bean id="accessTokenDAO" class="com.ojas.ra.dao.AccessTokenDAO"></bean>
+
+	<bean id="userAccountDAO" class="com.ojas.ra.dao.UserAccountDAO"></bean>
+
+	<bean id="roleMappingDAO" class="com.ojas.ra.dao.RoleMappingDAO"></bean>
+
+	<bean id="requirementDAO" class="com.ojas.ra.dao.RequirementDAO"></bean>
+
+	<bean id="registrationDAO" class="com.ojas.ra.dao.RegistrationDAO"></bean>
+
+	<bean id="addressDAO" class="com.ojas.ra.dao.AddressDAO"></bean>
+
+	<bean id="skillsDAO" class="com.ojas.ra.dao.SkillsDAO"></bean>
+
+	<bean id="roleDAO" class="com.ojas.ra.dao.RoleDAO"></bean>
+
+	<bean id="resourceDAO" class="com.ojas.ra.dao.ResourceDAO"></bean>
+
+	<bean id="paymentDAO" class="com.ojas.ra.dao.PaymentDAO"></bean>
+
+	<bean id="jobTypeDAO" class="com.ojas.ra.dao.JobTypeDAO"></bean>
+
+	<bean id="jobCategoryDAO" class="com.ojas.ra.dao.JobCategoryDAO"></bean>
+
+	<bean id="joinWithInDAO" class="com.ojas.ra.dao.JoinWithInDAO"></bean>
+
+	<bean id="resourceMappingDAO" class="com.ojas.ra.dao.ResourceMappingDAO"></bean>
+
+	<bean id="plans" class="com.ojas.ra.dao.PlansDAO"></bean>
+
+	<bean id="registrationType" class="com.ojas.ra.dao.RegistrationTypeDAO"></bean>
+
+	<bean id="primarySkills" class="com.ojas.ra.dao.PrimarySkillsDAO"></bean>
+
+	<bean id="secondarySkills" class="com.ojas.ra.dao.SecondarySkillsDAO"></bean>
+
+
+	<!-- INIT REST COMPONENTS -->
+
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<!-- SPRING SECURITY SETUP -->
+
+
+	<bean id="userService" class="com.ojas.ra.service.impl.UserServiceImpl" />
+
+	<bean id="tokenService" class="com.ojas.ra.service.impl.TokenServiceImpl" />
+
+	<bean id="dbService" class="com.ojas.ra.service.impl.DbServiceImpl" />
+
+	<bean id="requirementService" class="com.ojas.ra.service.impl.RequirementServiceImpl" />
+
+	<bean id="registrationService" class="com.ojas.ra.service.impl.RegistrationServiceImpl" />
+
+	<bean id="addressService" class="com.ojas.ra.service.impl.AddressServiceImpl" />
+
+	<bean id="skillsService" class="com.ojas.ra.service.impl.SkillsServiceImpl" />
+
+	<bean id="roleService" class="com.ojas.ra.service.impl.RoleServiceImpl" />
+
+	<bean id="roleMappingService" class="com.ojas.ra.service.impl.RoleMappingServiceImpl" />
+
+	<bean id="resourceService" class="com.ojas.ra.service.impl.ResourceServiceImpl" />
+
+	<bean id="paymentService" class="com.ojas.ra.service.impl.PaymentServiceImpl" />
+
+	<bean id="jobTypeService" class="com.ojas.ra.service.impl.JobTypeServiceImpl" />
+
+	<bean id="jobCategoryService" class="com.ojas.ra.service.impl.JobCategoryServiceImpl" />
+
+	<bean id="joinWithInService" class="com.ojas.ra.service.impl.JoinWithInServiceImpl" />
+
+	<bean id="plansServiceImpl" class="com.ojas.ra.service.impl.PlansServiceImpl" />
+
+	<bean id="registrationTypeServiceImpl" class="com.ojas.ra.service.impl.RegistrationTypeServiceImpl" />
+
+	<bean id="secondarySkillsServiceImpl" class="com.ojas.ra.service.impl.SecondarySkillsServiceImpl" />
+
+	<bean id="resourceMappingService" class="com.ojas.ra.service.impl.ResourceMappingServiceImpl" />
+
+	<bean id="primarySkillsService" class="com.ojas.ra.service.impl.PrimarySkillsServiceImpl" />
+
+	<bean id="authenticationTokenProcessingFilter" class="com.ojas.ra.rest.AuthenticationTokenProcessingFilter">
+		<constructor-arg ref="userService" />
+	</bean>
+
+
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="username" value="vkayyappa.ayyappa@gmail.com" />
+		<property name="password" value="venki@123" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.port">465</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="sendMail" class="com.ojas.ra.util.SendMail">
+		<property name="javaMailSender" ref="javaMailSender" />
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- Maximum Upload Size (In Bytes) - 20 MB -->
+		<property name="maxUploadSize" value="20971520" />
+		<!-- Maximum Size Of The File In Memory (In Bytes) - 10 MB -->
+		<property name="maxInMemorySize" value="1048576" />
+
+	</bean>
+
+</beans>
+

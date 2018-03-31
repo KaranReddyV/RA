@@ -1,0 +1,56 @@
+.loader {
+	font-size: 36px;
+	line-height: 36px;
+	font-weight: bold;
+	width: 200px;
+	height: 92px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.banner{
+background-color: #30426a;
+border-top-left-radius: 150px;
+padding-bottom: 25px;
+}
+ .banner h3{
+    color: white;
+}
+.banner h4{
+    color: black;
+     border-bottom: 1px solid #4a90e2;
+    padding-bottom:14px;
+}
+.first{
+    margin-left: 70px;
+    margin-top: 25px;
+}
+.years{
+    position: relative;
+    background-color: white;
+    height: 250px;
+    width:185px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #666;
+    float: left;
+    margin-left: 15px;
+}
+.buyButton{
+    border-top: 1px solid #dfe0e0;
+    color: #4a90e2;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 22px;
+    outline: 0;
+}
+.banner button {
+    background: 0 0;
+    overflow: visible;
+    border: 0;
+}

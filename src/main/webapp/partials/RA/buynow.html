@@ -1,0 +1,14 @@
+<div class="container banner">
+    <h3 class="text-center">Choose Your Special Offer</h3>
+    <div class="first">
+        <div class="years text-center" ng-repeat="x in UserDetails">
+                <h4><i class="fa fa-rupee"></i>{{x.rate}}</h4>
+                <p>{{x.month}}</p>
+                <p>{{x.plus}}</p>
+                <p>{{x.vacancy}}</p>
+                <p>{{x.cv}}</p>
+                <h5>{{x.email}}</h5>
+                <button class="buyButton" ui-sref="RA.RAlist">BUY NOW</button>
+        </div>
+    </div>
+</div>

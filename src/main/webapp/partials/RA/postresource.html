@@ -1,0 +1,48 @@
+ <div  class="container m-t-50">
+                <form class="form-inline text-center">
+                    <div class="input-group">
+                    <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" required>
+                    <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                    </div>
+                </form> 
+      <div class="table-responsive m-t-30">
+           <table class="table text-center">
+                      <thead>
+                          <tr>
+                              <th>S.No</th>
+                              <th>Job Type</th>
+                              <th>Job Description</th>
+                              <th>Job Location</th>
+                              <th>Experience</th>
+                              <th>Primary Skills</th>
+                              <th>No of Resources</th>
+                              <th>Join Within</th>
+                              <th>Post</th>
+                               </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr ng-repeat="post in postresource | filter:search">
+                                            <td>{{$index+1}}</td>
+                                            <td>{{post.jobTitle}}</td>
+                                            <td>{{post.description}}</td>
+                                            <td>{{post.jobLocation}}</td>
+                                            <td>{{post.experience}}</td>
+                                            <td>{{post.primarySkills}}</td>
+                                            <td>{{post.resources}}</td>
+                                            <td>{{post.joinWithin}}</td>
+                                            <td><a type="button" class="btn btn-primary butn" ui-sref="RA.postresourceById({localId:localid,resourceById:post.registrationId,objectid:post._id})" ><i class="fa fa-user-plus"></i></a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="row">
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary">Prev</button> 1/13 <button type="button" class="btn btn-primary">Next</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary pull-right" ui-sref=""> Add </button>
+                                  </div>
+                                  </div>
+                              </div>

@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<center><h3>Add New JobType</h3></center>
+			<form name="user" class="frmbgclr" ng-submit="newjobtype()">
+				<div class="form-group">
+					<label class="control-label" for="fname">Job Type:</label>
+                    <input type="text" class="form-control" name="jobType" ng-model="alluser.jobType" required ng-pattern="/^[a-zA-Z](\D)+$/" ng-minlength="5" ng-maxlength="20" placeholder="Enter Job Type"> 
+                     <span class="help-block" ng-show="user.jobType.$invalid && user.jobType.$touched ||user.jobType.$invalid && user.jobType.$dirty">
+                 <span class="help-block" ng-show="user.jobType.$error.required">JoinWithIn is required </span>
+               </span>
+              <span class="help-block" ng-show="user.jobType.$error.pattern || user.jobType.$error.minlength || user.jobType.$error.maxlength" >Enter Text only, between 5 to 20 characters</span>
+				</div>
+				
+                <div class="form-group pull-right">
+                          <button type="submit" class="btn btn-primary" ui-sref="RA.Jobtype" >Back</button>
+                          <button type="submit" class="btn btn-primary" ng-disabled="user.$invalid" >Submit</button>
+                          </div> 
+			</form>
+		</div>
+	</div>
+</div>
+
+
+                   
+                  

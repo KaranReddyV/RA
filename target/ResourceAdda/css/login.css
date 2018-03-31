@@ -1,0 +1,63 @@
+.bg {
+  	background-image:url(../images/bg1.jpg);
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 768px;
+}
+
+.l2{
+	margin:0 auto;
+}
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+} 
+ .l1{
+ color:white;
+ }
+ .h21{
+	 color:white;
+ text-align:center;
+ }
+ .i1{
+    border: 3px double#080808;
+ }
+ .error{
+color:rgb(233, 35, 35);
+ }
+ a:hover{
+  color:rgb(239, 175, 78);
+  text-decoration-color:rgb(76, 107, 128) ;
+  }
+  .ftxt{
+    color:rgb(239, 175, 78);
+    
+    }
+    .ctxt{
+      color:rgb(239, 175, 78);
+    
+      }
+@media screen and (max-width: 480px) and (min-width: 320px) {
+   .bg {
+    background-image:url(../images/bg1.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 540px;
+}
+
+}

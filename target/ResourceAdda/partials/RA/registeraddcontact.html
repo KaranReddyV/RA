@@ -1,0 +1,77 @@
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Contact Page</h3>
+			<form class="frmbgclr" name="regcontact" ng-submit="addcontact()">		
+					<div class="form-group">	
+						<label class="control-label" for="Contact-Name">Contact-Name:</label>
+							<input type="text" ng-model="contact.contactPersonName" name="contactPersonName" placeholder="Enter your Contact-Name" class="form-control" required>
+								<span class="help-block" ng-show="regcontact.contactPersonName.$dirty && regcontact.contactPersonName.$error.required">Required.!</span>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="Contact-Number">Contact-Number:</label>
+							<input type="number" ng-model="contact.contactNumber" name="contactNumber" placeholder="Enter your Contact-Number" class="form-control" required>
+							<span class="help-block" ng-show="regcontact.contactNumber.$dirty && regcontact.contactNumber.$error.required">Required.!</span>
+					</div>
+					<div class="form-group">
+							<label class="control-label" for="Contact-Email">Contact-Email:</label>
+								<input type="text" ng-model="contact.contactEmail" name="contactEmail" placeholder="Enter your Contact-Email" class="form-control" required>
+							<span class="help-block" ng-show="regcontact.contactEmail.$dirty && regcontact.contactEmail.$error.required">Required.!</span>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="Contact-Type">Contact-Type:</label>
+							<select ng-options = "x for x in contacttype" ng-model="contact.contactType" class="form-control" name="Enter your contactType" required>
+								<option >Select Contact Type</option>
+							</select>
+							<span class="help-block" ng-show="regcontact.contactType.$dirty && regcontact.contactType.$invalid">Please select contact type..!!</span>
+					</div>
+						<div class="clearfix"></div>
+			        	<h3>Address Details:</h3>
+			        	<hr/>
+			          <div class="form-group">
+                              <label class="control-label" for="street">Street No:</label>
+                              <input type="text" class="form-control" name="street" ng-model="contact.street"  placeholder="Enter your Street No" required>
+                              <span class="help-block" ng-show="regcontact.street.$dirty && regcontact.street.$error.required">Required..!!</span>
+
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="zipcode">Zip Code:</label>
+                              <input type="text" class="form-control" name="zipcode" ng-model="contact.zipcode" placeholder="Enter your Pin/Zip Code" required>
+                              <span class="help-block" ng-show="regcontact.zipcode.$dirty && regcontact.zipcode.$error.required">Required..!!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="mandal">Mandal:</label>
+                              <input type="text" class="form-control" name="mandal" ng-model="contact.mandal" placeholder="Enter your Mandal" required>
+                              <span class="help-block" ng-show="regcontact.mandal.$dirty && regcontact.mandal.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="city">City:</label>
+                              <input type="text" class="form-control" name="city" ng-model="contact.city" placeholder="Enter your City" required>
+                              <span class="help-block" ng-show="regcontact.city.$dirty && regcontact.city.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="state">State:</label>
+                              <input type="text" class="form-control" name="state" ng-model="contact.state" placeholder="Enter your State" required>
+                              <span class="help-block" ng-show="regcontact.state.$dirty && regcontact.state.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="country">Country:</label>
+                              <input type="text" class="form-control" name="country" ng-model="contact.country" placeholder="Enter your Country" required>
+                              <span class="help-block" ng-show="regcontact.country.$dirty && regcontact.country.$error.required">Required..!</span>
+                            </div>
+
+			          <div class="form-group">
+			            <div class="col-sm-offset-2 col-sm-10">
+			              <div class="form-group pull-right">
+			                <button type="button" class="btn btn-primary">Back</button>
+			                <button type="submit" class="btn btn-primary">Submit</button>
+			             </div>
+			            </div>
+			          </div>
+			   	</form>
+		</div>
+	</div>
+</div>

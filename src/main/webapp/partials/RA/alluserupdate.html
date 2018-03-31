@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<h3>All Users</h3>
+			<form name="user" class="frmbgclr" ng-submit="alluserupdate()">
+				<div class="form-group">
+					<label class="control-label" for="fname">First Name:</label>
+                    <input type="text" class="form-control" name="firstname" ng-model="alluser.firstname" placeholder="Enter Your First Name" required> 
+                    <span class="help-block" ng-show="user.firstname.$dirty && user.firstname.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="lname">Last Name:</label>
+                    <input type="text" class="form-control" name="lastname" ng-model="alluser.lastname" placeholder="Enter Your Last Name" required> 
+                    <span class="help-block" ng-show="user.lastname.$dirty && user.lastname.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="mobile">Mobile No:</label>
+					<input type="text" class="form-control" name="mobile" ng-model="alluser.mobile" placeholder="Enter your Mobile No" required>
+					<span class="help-block" ng-show="user.mobile.$dirty && user.mobile.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="email">Email:</label>
+					<input type="email" class="form-control" name="email" ng-model="alluser.email" placeholder="Enter your Mail ID" required>
+					<span class="help-block" ng-show="user.email.$dirty && user.email.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="username">User Name</label>
+					<input type="text" class="form-control" name="username" ng-model="alluser.username" placeholder="Enter your User Name" required>
+					<span class="help-block" ng-show="user.username.$dirty && user.username.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="password">Password:</label>
+					<input type="password" class="form-control" name="password" ng-model="alluser.password" placeholder="Enter your Password" required>
+					<span class="help-block" ng-show="user.password.$dirty && user.password.$error.required">Required.!</span>
+				</div>
+				<div class="form-group">
+                   <label class="control-label" for="status">Select Status:</label>
+                    <select class="form-control" ng-options="x for x in userstatus" ng-model="alluser.status" name="status" required>
+                        <option value="">Select status</option>
+                     </select>
+                    <span class="help-block" ng-show="user.status.$dirty && user.status.$invalid">Please select registration type..!!</span>
+                </div>
+                <div class="form-group">
+                	<b>Role Name:</b>
+                	<label ng-repeat="role in roles">
+                		<input type="checkbox" data-checklist-model="alluser.roleMapper" data-checklist-value="role"> {{role.roleName}} &nbsp;
+                	</label> 
+                </div>
+                <div class="form-group pull-right">
+                          <button type="submit" class="btn btn-primary" ui-sref="" >Back</button>
+                          <button type="submit" class="btn btn-primary" ng-disabled="user.$invalid" >Submit</button>
+                          </div> 
+			</form>
+		</div>
+	</div>
+</div>

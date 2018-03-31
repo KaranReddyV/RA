@@ -1,0 +1,53 @@
+        <div  class="container m-t-50">
+                <form class="form-inline text-center">
+                    <div class="input-group">
+                    <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" required>
+                    <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                    </div>
+                </form>
+                                  <div class="table-responsive m-t-30">
+                                      <table class="table text-center">
+                                        <thead>
+                                          <tr>
+                                            <th>S.no</th>
+                                                <th>Contact-Name</th>
+                                                <th>Contact-Number</th>
+                                                <th>Contact-Email</th>
+                                                <th>Contact-Type</th>
+                                                <th>Street</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Postcode</th>
+                                                <th>Country</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr ng-repeat="x in contactlist | filter:search">
+                                            <td>{{$index+1}}</td>
+                                            <td>{{x.contactPersonName}}</td>
+                                            <td>{{x.contactNumber}}</td>
+                                            <td>{{x.contactEmail}}</td>
+                                            <td>{{x.contactType}}</td>
+                                            <td>{{x.street}}</td>
+                                            <td>{{x.City}}</td>
+                                            <td>{{x.state}}</td>
+                                            <td>{{x.postalCode}}</td>
+                                            <td>{{x.country}}</td>
+                                            <td><a type="button" class="btn btn-primary" ui-sref="RA.updateregistercontact({contactId:x._id})"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+                                            <td><a type="button" class="btn btn-primary" ui-sref="main.delete()"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                  </div>
+                                  <div class="row">
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary">Prev</button> 1/13 <button type="button" class="btn btn-primary">Next</button>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary pull-right" ui-sref="RA.registeraddContact">Add</button> 
+                                  </div>
+                                  </div>
+                              </div>

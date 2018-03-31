@@ -1,0 +1,35 @@
+	 <div  class="container m-t-50">
+                <form class="form-inline text-center">
+                    <div class="input-group">
+                    <input type="text" ng-model="search" class="form-control" size="50" placeholder="Search requirement" required>
+                    <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+                    </div>
+                </form>
+                <div class="table-responsive m-t-30">
+                	<table class="table text-center">
+						    <thead>
+						        <th>S.No</th>
+						        <th>secondarySkills</th>
+								<th>Edit</th>
+						    </thead>
+						    <tbody>
+						        <tr ng-repeat="x in secondaryget | filter:search">
+						            <td>{{$index+1}}</td>
+						            <td>{{ x.secondarySkills}}</td>
+						           
+						           <td><a type="button" class="btn btn-primary" ui-sref="RA.secondaryskilledit({putskill:x._id})"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+						        </tr>
+						    </tbody>
+					</table>
+                </div> 
+                 <div class="row">
+                                  <div class="col-md-6">
+                                     <!--  <button type="button" class="btn btn-primary">Prev</button> 1/13 <button type="button" class="btn btn-primary">Next</button> -->
+                                  </div>
+                                  <div class="col-md-6">
+                                      <button type="button" class="btn btn-primary pull-right" ui-sref="RA.secondaryskilladd"> Add </button>
+                                  </div>
+                                  </div>
+                </div>	 

@@ -1,0 +1,173 @@
+
+
+/* form styling */
+#form-container                
+{ 
+	margin-bottom:20px;
+	border-radius:5px; 
+}
+#form-container:before {
+    content: '';
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 74%;
+    margin: 0 auto;
+    left: 2%;
+    right: 0;
+    top: 9%;
+    z-index: 1;
+}
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:15%; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+#status-buttons span            
+{ background: #fff !important;
+    display: inline-block;
+    height: 70px;
+    color: #000;
+    position: absolute;
+    width: 70px;
+    z-index: 2;
+    border-radius: 50%;
+    line-height: 70px;
+	border: 2px solid #e0e0e0; }
+#status-buttons i {
+		font-size: 21px;
+    }
+#status-buttons:after {
+    content: '';
+    position: absolute;
+    background-color: #e0e0e0;
+    width: 95%;
+    height: 2px;
+    top: 22%;
+    left: 0%;
+    }
+/* active buttons */
+#status-buttons a.active span   {background: #fff;
+	border: 2px solid #337ab7;
+	color: #337ab7; }
+
+	#status-buttons a.active span:after{
+		content: " ";
+    position: absolute;
+    left: 35%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #337ab7;
+    top: 128%;
+	}
+
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form            { position:relative; min-height:380px; overflow:hidden; padding:30px; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+}
+    
+/* enter animation */
+#form-views.ng-enter            { 
+    -webkit-animation:slideInRight 0.5s both ease;
+	-moz-animation:slideInRight 0.5s both ease;
+	animation:slideInRight 0.5s both ease; 
+}
+
+/* leave animation */
+#form-views.ng-leave            { 
+    -webkit-animation:slideOutLeft 0.5s both ease;
+	-moz-animation:slideOutLeft 0.5s both ease;
+	animation:slideOutLeft 0.5s both ease;   
+}
+.frmbgclr hr{
+	margin-top: 0px;
+margin-bottom: 20px;
+border: 0;
+border-top: 1px solid #ccc;
+}
+.help-block{
+color: red;
+}
+.form-control{
+ display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+background-color: #fff;
+background-image: none;
+border: 1px solid #d6d6d6;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(200%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(200%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(200%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+@media screen and (max-width: 1370px) and (min-width: 1250px) {
+    
+#status-buttons a.active span:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #337ab7;
+    top: 107%;
+}
+}
+@media screen and (max-width: 1249px) and (min-width: 1150px) {
+    
+#status-buttons a.active span:after {
+    content: " ";
+    position: absolute;
+    left: 35%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #337ab7;
+    top: 103%;
+}
+}

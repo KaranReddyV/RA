@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-3 col-md-6">
+			<h3>All Users</h3>
+			<form name="user" class="frmbgclr" ng-submit="updatejoinWithIn()">
+				<div class="form-group">
+					<label class="control-label" for="fname">JoinWithIn:</label>
+                    <input type="text" class="form-control" name="newJoin" ng-model="newJoin.joinWithIn" required ng-pattern="/^[a-zA-Z](\D)+$/" ng-minlength="5" ng-maxlength="20" placeholder="Enter Your Join"> 
+                     <span class="help-block" ng-show="user.newJoin.$invalid && user.newJoin.$touched ||user.newJoin.$invalid && user.newJoin.$dirty">
+	                  <span class="help-block" ng-show="user.newJoin.$error.required">JoinWithIn is required </span>
+	                 </span>
+               		 <span class="help-block" ng-show="user.newJoin.$error.pattern || user.newJoin.$error.minlength || user.newJoin.$error.maxlength" >Enter Text only, between 5 to 20 characters</span>
+               		
+				</div>
+				
+                <div class="form-group pull-right">
+                   <button type="submit" class="btn btn-primary" ui-sref="RA.JoinWithIn" >Back</button>
+                   <button type="submit" class="btn btn-primary" ng-disabled="user.$invalid" >Submit</button>
+                </div> 
+			</form>
+		</div>
+	</div>
+</div>

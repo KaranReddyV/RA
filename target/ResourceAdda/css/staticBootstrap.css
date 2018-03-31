@@ -1,0 +1,34 @@
+.navbar {
+    position: relative;
+    min-height: 59px;
+    margin-bottom: 0px !important; 
+    border: 1px solid transparent;
+}
+.navbar-inverse {
+    background-color: #30426a !important;
+    border-color: #30426a !important;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff !important;
+}
+ .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+        color: #30426a !important;
+    background-color: #fff !important;
+    border-radius: 15px;
+} 
+thead tr th {
+    text-align: center;
+}
+.navbar-default .navbar-nav>.active>a{
+     background-color: transparent !important; 
+}
+@media (min-width: 768px){
+	.navbar {
+    border-radius: 0px !important;
+}
+.navbar-right {
+    float: right!important;
+    margin-right: -15px;
+    margin-top: 4px;
+}
+}

@@ -1,0 +1,17 @@
+<div class="container">
+		<div class="col-md-offset-3 col-md-6 frmbgclr">
+			<form ng-submit="secondaryadd()" name="myForm">
+						<div class="form-group">
+							<label class="control-label" for="secondarySkills">Add Secondary Skills:</label>
+							<input type="text" class="form-control" name="secondarySkills" ng-model="secondadd.secondarySkills" required ng-pattern="/^[a-zA-Z](\D)+$/" ng-minlength="5" ng-maxlength="20" placeholder="Enter Your Join" >	
+						    <span class="help-block" ng-show="myForm.secondarySkills.$invalid && myForm.secondarySkills.$touched ||myForm.secondarySkills.$invalid && myForm.secondarySkills.$dirty">
+                            <span class="help-block" ng-show="myForm.secondarySkills.$error.required">secondarySkills is required </span>
+                            </span>
+                            <span class="help-block" ng-show="myForm.secondarySkills.$error.pattern || myForm.secondarySkills.$error.minlength || myForm.secondarySkills.$error.maxlength" >Enter Text only, between 5 to 20 characters</span>
+							
+						</div>
+						<button type="submit" class="btn btn-primary" ui-sref="RA.secondaryskill">Back</button>
+						<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
+			</form>
+     </div>
+</div>

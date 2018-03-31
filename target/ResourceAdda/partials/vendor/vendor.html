@@ -1,0 +1,27 @@
+<nav class="navbar navbar-inverse bg-color">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a ui-sref=".dashboard">Dashboard</a></li>
+        <li><a ui-sref="">Buy Now</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li class="m-t-20"> 
+      <select class="form-control" ng-options="reg for reg in register" ng-model="registerData" ng-change="dataregister()">
+		<option value="" disabled="">Register</option>
+	  </select>
+	  </li>
+        <li ng-controller="LoginCtrl"><a href="#" ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div ui-view></div>

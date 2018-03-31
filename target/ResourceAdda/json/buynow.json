@@ -1,0 +1,47 @@
+{
+    "details" : [
+        {
+            "Rate": "599",
+            "Month": "One Month",
+            "Pluse": "+",
+            "Vacancy": "1 Hot Vacancy*",
+            "Cv": "150CV Access",
+            "Emails" :"1000 Emails"
+        },
+        {
+            "Rate": "699",
+            "Month": "Two Months",
+            "Pluse": "+",
+            "Vacancy": "1 Hot Vacancy*",
+            "Cv": "250CV Access",
+            "Emails" :"1100 Emails"
+        },
+        {
+            "Rate": "899",
+            "Month": "Three Months",
+            "Pluse": "+",
+            "Vacancy": "2 Hot Vacancy**",
+            "Cv": "350CV Access",
+            "Emails" :"1200 Emails"
+        },
+        {
+            "Rate": "999",
+            "Month": "Four Months",
+            "Pluse": "+",
+            "Vacancy": "1 Hot Vacancy*",
+            "Cv": "350CV Access",
+            "Emails" :"1500 Emails"
+        },
+        {
+            "Rate": "Free Trail",
+            "Month": "15 Days",
+            "Pluse": "+",
+            "Vacancy": "Not available",
+            "Cv": "50CV Access",
+            "Emails" :"100 Emails"
+        }
+    ]
+
+}
+
+

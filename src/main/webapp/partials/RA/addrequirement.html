@@ -1,0 +1,94 @@
+<div class="container m-t-50">
+  <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+          <form name="frm" class="frmbgclr" ng-submit="addReq()">
+              <div class="form-group">
+                  <label class="control-label">Company Name</label>
+                      <select class="form-control" ng-options="x for x in companyNameList" ng-change="companyid()" ng-model="companyName1" name="companyName" required>
+                        <option value="">Select CompanyName</option>
+                      </select>
+                  <span class="help-block" ng-show="frm.companyName.$dirty && frm.companyName.$invalid">Please select company Name..!!</span>
+                </div>
+                <div class="form-group">
+                   <label class="control-label">Job Category:</label>
+                      <select class="form-control" ng-options="x for x in jobcategory" ng-model="postrequirement.jobCategory" name="jobcategory" required>
+                        <option value="">Select Job Category</option>
+                         <span class="help-block" ng-show="frm.jobcategory.$dirty && frm.jobcategory.$invalid">Please select Job Category..!!</span> 
+                    </select>
+                   <span class="help-block" ng-show="frm.jobcategory.$touched && frm.jobcategory.$pristine">Please select Job Category..!!</span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Job Type:</label>
+                        <select class="form-control" ng-options="x for x in jobtype" ng-model="postrequirement.jobType" name="jobtype" required>
+                            <option value="">Select Job Type</option>      
+                        </select> 
+                        <span class="help-block" ng-show="frm.jobtype.$touched && frm.jobtype.$pristine"></span>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Title for your job:</label>
+                  <input type="text" class="form-control" name="jobtitle" ng-model="postrequirement.jobTitle" placeholder="Enter Your Job Title" required> 
+                    <span class="help-block" ng-show="frm.jobtitle.$dirty && frm.jobtitle.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.jobtitle.$error.pattern && frm.jobtitle.$invalid ">please enter title job</span>  
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label">Job Description:</label>
+                  <textarea class="form-control" rows="5" name="description" ng-model="postrequirement.description" required></textarea>
+                         <span class="help-block" ng-show="frm.description.$dirty && frm.description.$error.required">Required.!</span>
+                        <span class="help-block" ng-show="frm.description.$error.pattern && frm.description.$invalid ">please enter title job</span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Job Location:</label>
+                    <select class="form-control" ng-options="y for y in joblocation" ng-model="postrequirement.jobLocation" name="joblocation" required>
+                           <option value="">Select Job Location</option>
+                    </select>
+                         <span class="help-block" ng-show="frm.joblocation.$dirty && frm.joblocation.$invalid">Please Select Job Location..!!</span> 
+                </div>
+                    <div class="form-group">
+                        <label class="control-label">Rate Type:</label>
+                        <input type="text" class="form-control" name="ratetype" ng-model="postrequirement.rateType" placeholder="Enter Your Rate Type" required>
+                        <span class="help-block" ng-show="frm.ratetype.$dirty && frm.ratetype.$error.required">Required.!</span>
+                        <span class="help-block" ng-show="frm.ratetype.$error.pattern && frm.ratetype.$invalid ">please enter rate type..!!</span> 
+                    </div> 
+                    <div class="form-group">
+                        <label class="control-label">Experience:</label>
+                        <select class="form-control" ng-options="exp for exp in experience" ng-model="postrequirement.experience" name="experience" required> 
+                            <option value="">Select Experience</option>
+                        </select>
+                         <span class="help-block" ng-show="frm.experience.$dirty && frm.experience.$invalid">Please select Job Experience..!!</span>
+                        <span class="help-block" ng-show="frm.experience.$touched && frm.experience.$pristine">Please Enter Experience..!!</span>
+
+                    </div>    
+						<div class="form-group">
+							<label class="control-label">Primary Skills</label>
+							<select class="form-control" ng-options="primary for primary in primaryskills" multiple name="primarySkills" ng-model="postrequirement.primarySkills">
+							<option> Select Primary Skills</option>
+							</select>
+							{{skills}}
+						</div>
+						<div class="form-group">
+							<label class="control-label">Secondary Skills</label>
+							<select class="form-control" ng-options="secondary for secondary in secondaryskills" multiple name="secondarySkills" ng-model="postrequirement.secondarySkills"> </select>
+						</div>
+                        <div class="form-group">
+                            <label class="control-label">No of Resources:</label>
+                            <input type="text" class="form-control" name="resources" ng-model="postrequirement.resources" placeholder="Enter No of Resources" required>
+                             <span class="help-block" ng-show="frm.resources.$dirty && frm.resources.$error.required">Required..!</span>
+                            <span class="help-block" ng-show="frm.resources.$touched && frm.resources.$pristine">Please Enter No Of Resources..!!</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Join Within:</label>
+                            <select class="form-control" ng-options="join for join in joining" ng-model="postrequirement.joinWithin" name="joinwithin" required>
+                            <option value="">Select Join within</option>
+                            </select>
+                             <span class="help-block" ng-show="frm.joinwithin.$dirty && frm.joinwithin.$invalid">Please select Join within..!!</span>
+                           <span class="help-block" ng-show="frm.joinwithin.$touched && frm.joinwithin.$pristine">Please Enter Notice period..!!</span>
+                        </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary pull-right" ng-disabled="frm.$invalid" >Submit</button>
+                    </div>     
+    </form>
+    </div>
+    </div>
+</div>
+

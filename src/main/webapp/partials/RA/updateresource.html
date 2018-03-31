@@ -1,0 +1,146 @@
+ <div class="container m-t-50">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <form name="frm" class="frmbgclr" ng-submit="updateResource();">
+						<div class="form-group">
+                  <label class="control-label">Company Name</label>
+                      <select class="form-control" ng-options="x for x in companyNameList" ng-change="companyid()" ng-model="companyName1" name="companyName" required>
+                        <option value="">Select Company Name</option>
+                      </select>
+                  <span class="help-block" ng-show="frm.companyName.$dirty && frm.companyName.$invalid">Please select company Name..!!</span>
+                </div>
+                       <div class="form-group">
+                            <label class="control-label" for="name">Name:</label>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" class="form-control" name="fname" ng-model="resource.firstName" placeholder="First Name" ng-pattern="/^[a-zA-Z]{1,20}$/" required>
+                                        <span class="help-block" ng-show="frm.fname.$dirty && frm.fname.$error.required">Required.!</span>
+                                        <span class="help-block" ng-show="frm.fname.$error.pattern && frm.fname.$invalid ">Use only alphabetical</span>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <input type="text" class="form-control" name="lname" ng-pattern="/^[a-zA-Z]{1,15}$/" ng-model="resource.lastName" placeholder="Last Name" required>
+                                        <span class="help-block" ng-show="frm.lname.$dirty && frm.lname.$error.required">Required.!</span>
+                                        <span class="help-block" ng-show="frm.lname.$error.pattern && frm.lname.$invalid ">Use only alphabetical</span>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="gender">Gender:</label>
+                            <select class="form-control" ng-options="x for x in gender" ng-model="resource.gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.gender.$dirty && frm.gender.$invalid">Please select gender..!!</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="DOB">Date of Birth:</label>
+                            <input type="date" class="form-control" ng-model="resource.dateOfBirth" name="dateofbirth" placeholder="MM/DD/YYYY" required>
+                            <span class="help-block" ng-show="frm.dateofbirth.$dirty && frm.dateofbirth.$invalid">Please select Date of Birth..!!</span>
+                        </div>
+
+						<div class="form-group">
+							<label class="control-label" for="email">Email Id:</label>
+							<input type="email" class="form-control" name="email" ng-model="resource.emailId" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/" placeholder="Enter your Email ID" required>
+							<span class="help-block" ng-show="frm.email.$dirty && frm.email.$error.required">Required.!</span>
+							<span class="help-block" ng-show="frm.email.$error.pattern && frm.email.$invalid">Enter valid email ID</span>
+						</div>
+                        <div class="form-group">
+                          <label class="control-label" for="mobile">Mobile Number:</label>
+                          <input type="text" class="form-control" name="mobile" ng-model="resource.mobileNumber" placeholder="Enter your Mobile No" required>
+                          <span class="help-block" ng-show="frm.mobile.$dirty && frm.mobile.$error.required">Required.!</span>
+                          <span class="help-block" ng-show="frm.mobile.$error.pattern && frm.mobile.$invalid ">Enter Valid Phone Number..!</span>
+                        </div>
+                   
+               
+                       <div class="clearfix"></div>
+                            <h3>Experience Details:</h3>
+                            <hr/>
+                        <div class="form-group">
+                            <label class="control-label" for="experience">Total Experience:</label>
+                            <select class="form-control" ng-options="exp for exp in experience" ng-model="resource.totalExperience" name="experience" required>
+                                <option value="">Select Total Experience:</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.experience.$dirty && frm.experience.$invalid">Please select Total Experience.!!</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="currentLocation">Current Location:</label>
+                            <select class="form-control" ng-options="exp for exp in currentLocation" ng-model="resource.currentLocation" name="currentLocation" required>
+                                <option value="">Select Current Location:</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.currentLocation.$dirty && frm.currentLocation.$invalid">Please select Current Location.!!</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="avaliability">Avaliability(Notice Period):</label>
+                            <select class="form-control" ng-options="avi for avi in avaliability" ng-model="resource.availability" name="avaliability" required>
+                                <option value="">Select Avaliability:</option>
+                            </select>
+                            <span class="help-block" ng-show="frm.avaliability.$dirty && frm.avaliability.$invalid">Please select Avaliability.!!</span>
+                        </div>
+                        <div class="form-group">
+                              <label class="control-label" for="designation">Designation:</label>
+                              <input type="text" class="form-control" name="designation" ng-model="resource.designation"  placeholder="Enter your Designation" required>
+                              <span class="help-block" ng-show="frm.designation.$dirty && frm.designation.$error.required">Required..!!</span>
+
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="designation">Key Skills:</label>
+                              <input type="text" class="form-control" name="skills" ng-model="resource.skills"  placeholder="Enter your key skills" required>
+                              <span class="help-block" ng-show="frm.skills.$dirty && frm.skills.$error.required">Required..!!</span>
+
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="designation">Preferred Location:</label>
+                              <input type="text" class="form-control" name="preferredloc" ng-model="resource.preferredLocation"  placeholder="Enter your preferred location" required>
+                              <span class="help-block" ng-show="frm.preferredloc.$dirty && frm.preferredloc.$error.required">Required..!!</span>
+
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="designation">Rate (INR):</label>
+                              <input type="text" class="form-control" name="rate" ng-model="resource.rate"  placeholder="Enter your Rate(INR)" required>
+                              <span class="help-block" ng-show="frm.rate.$dirty && frm.rate.$error.required">Required..!!</span>
+
+                            </div>
+
+                        <div class="clearfix"></div>
+                            <h3>Address Details:</h3>
+                            <hr/>
+                            <div class="form-group">
+                              <label class="control-label" for="street">Street No:</label>
+                              <input type="text" class="form-control" name="street" ng-model="resource.streetNo"  placeholder="Enter your Street No" required>
+                              <span class="help-block" ng-show="frm.street.$dirty && frm.street.$error.required">Required..!!</span>
+
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="zipcode">Zip Code:</label>
+                              <input type="text" class="form-control" name="zipcode" ng-model="resource.zipcode" placeholder="Enter Your Pin/Zip Code" required>
+                              <span class="help-block" ng-show="frm.zipcode.$dirty && frm.zipcode.$error.required">Required..!!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="mandal">Mandal:</label>
+                              <input type="text" class="form-control" name="mandal" ng-model="resource.mandal" placeholder="Enter your Mandal" required>
+                              <span class="help-block" ng-show="frm.mandal.$dirty && frm.mandal.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="city">City:</label>
+                              <input type="text" class="form-control" name="city" ng-model="resource.city" placeholder="Enter Your City" required>
+                              <span class="help-block" ng-show="frm.city.$dirty && frm.city.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="state">State:</label>
+                              <input type="text" class="form-control" name="state" ng-model="resource.state" placeholder="Enter Your State" required>
+                              <span class="help-block" ng-show="frm.state.$dirty && frm.state.$error.required">Required..!</span>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label" for="country">Country:</label>
+                              <input type="text" class="form-control" name="country" ng-model="resource.country" placeholder="Enter Your Country" required>
+                              <span class="help-block" ng-show="frm.country.$dirty && frm.country.$error.required">Required..!</span>
+                            </div>
+                  
+							 <div class="form-group pull-right">
+                          <button type="button" class="btn btn-primary butn" ui-sref="RA.alluserAdd" >Back</button>
+                          <button type="submit" class="btn btn-primary butn" ng-disabled="user.$invalid" >Submit</button>
+                          </div> 
+                    </form>
+                </div>
+
+            </div>
+          </div>
